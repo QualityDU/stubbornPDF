@@ -20,7 +20,7 @@ function bulk_ocr() {
 	local outname="tesser$i";
 	echo "outname: $outname";
 	tesseract "$ppm" "tesser$i" || { echo "Failed tesseract $ppm tesser$i. Quit"; exit 1; };
-	i=$(( $i + 1 ));
+	i=$((i + 1));
     done;
     echo "Finished bulk OCR";
 }
@@ -60,7 +60,7 @@ fi;
 INPUT_PDF_FILE_PATH="$(realpath "$INPUT_PDF_FILE_PATH")";
 OUTPUT_TXT_FILE_PATH="$(realpath "$OUTPUT_TXT_FILE_PATH")";
 
-mkdir "$STUBBORNPDF_TEMP_DIR_PDFIMAGES_OUT" || { echo "Failed to create directory $STUBBORNPDF_TEMP_DIR_PDFTOIMAGES_OUT. Quit"; exit 1; };
+mkdir "$STUBBORNPDF_TEMP_DIR_PDFIMAGES_OUT" || { echo "Failed to create directory $STUBBORNPDF_TEMP_DIR_PDFIMAGES_OUT. Quit"; exit 1; };
 
 cd "$STUBBORNPDF_TEMP_DIR_PDFIMAGES_OUT" || { echo "Failed to cd $STUBBORNPDF_TEMP_DIR_PDFIMAGES_OUT. Quit"; exit 1; };
 
