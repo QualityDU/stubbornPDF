@@ -19,7 +19,7 @@ function bulk_ocr() {
         echo "Processing $ppm...";
 	local outname="tesser$i";
 	echo "outname: $outname";
-	tesseract "$ppm" "tesser$i" || { echo "Failed tesseract $ppm tesser$i. Quit"; exit 1; };
+	tesseract "$ppm" "tesser$i" || { echo "Failed tesseract $ppm tesser$i. Ignoring"; };
 	i=$((i + 1));
     done;
     echo "Finished bulk OCR";
